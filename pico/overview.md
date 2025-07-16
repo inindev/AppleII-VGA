@@ -1,0 +1,32 @@
+The **AppleII-VGA** project uses a Raspberry Pi Pico to create a VGA video card for Apple II+ and IIe computers, emulating their video output modes (text, lores, hires, and double-res modes for IIe) and supporting the Videx VideoTerm for 80-column text on II+. It leverages the Pico's PIO and DMA for precise timing and video signal generation.
+
+### File Summaries:
+- **[CMakeLists.txt](CMakeLists.txt)**: Configures the build process, sets up the Pico SDK, defines the Apple model (II+ or IIe), and compiles the firmware with source files and libraries.
+- **[README.md](README.md)**: Provides instructions for setting up the Pico SDK, building firmware for Apple II+ or IIe, installing the firmware, and enabling a test pattern.
+- **[abus.c](abus.c)**: Manages the Apple II bus interface, shadows memory and soft-switches, handles bus cycles, and supports Videx VideoTerm for II+.
+- **[abus.h](abus.h)**: Declares functions for initializing and running the Apple II bus interface loop.
+- **[abus.pio](abus.pio)**: PIO program for capturing Apple II bus signals (address, data, R/W, DEVSEL) synchronized with PHI0 clock.
+- **[board_config.h](board_config.h)**: Defines hardware configurations (pin mappings, system clock, PIO assignments) for the VGA and bus interfaces.
+- **[buffers.c](buffers.c)**: Defines memory buffers for main/aux memory, soft-switches, and character ROM, used for video rendering.
+- **[buffers.h](buffers.h)**: Declares buffer variables and constants for video modes and memory mappings.
+- **[cmake-variants.yaml](cmake-variants.yaml)**: Specifies build variants for Apple II+ or IIe and debug/release configurations.
+- **[colors.c](colors.c)**: Defines NTSC and monochrome color palettes for rendering, including phase-shifted colors for double-res modes.
+- **[colors.h](colors.h)**: Declares color palette arrays and variables for video rendering.
+- **[config.c](config.c)**: Manages persistent configuration storage in flash, including scanline emulation, monochrome settings, and character ROM.
+- **[config.h](config.h)**: Declares functions for loading, saving, and resetting configuration.
+- **[device_regs.c](device_regs.c)**: Handles writes to device registers, controlling settings like scanline emulation, monochrome colors, and character ROM.
+- **[device_regs.h](device_regs.h)**: Declares functions for device register writes and command execution.
+- **[hires_color_patterns.h](hires_color_patterns.h)**: Defines lookup table for hires mode color patterns based on bit sequences.
+- **[hires_dot_patterns.h](hires_dot_patterns.h)**: Defines lookup table for hires mode dot patterns, mapping bytes to 14 half-pixel dots.
+- **[main.c](main.c)**: Initializes the system clock, LED, configuration, and launches VGA rendering on core1 while running the bus loop on core0.
+- **[memmap_copy_to_ram_custom.ld](memmap_copy_to_ram_custom.ld)**: Custom linker script reserving 128KB of flash for persistent storage and defining memory layout.
+- **[render.c](render.c)**: Initializes rendering and loops through rendering modes (text, lores, hires, or Videx text) based on soft-switches.
+- **[render.h](render.h)**: Declares rendering functions for various video modes and test pattern.
+- **[render_hires.c](render_hires.c)**: Implements hires and double-hires rendering, supporting multiple resolutions and color modes for IIe.
+- **[render_lores.c](render_lores.c)**: Renders lores and double-lores modes, handling color and monochrome displays.
+- **[render_testpat.c](render_testpat.c)**: Generates a VGA test pattern with color bars and patterns for testing output.
+- **[render_text.c](render_text.c)**: Renders text mode (40/80 columns), handling character flashing and color settings.
+- **[vga.c](vga.c)**: Initializes VGA output using PIO for HSYNC, VSYNC, and pixel data, with DMA for scanline transfers.
+- **[vga.h](vga.h)**: Defines VGA constants, scanline structure, and functions for frame and scanline management.
+- **[videx_vterm.c](videx_vterm.c)**: Implements Videx VideoTerm emulation for 80-column text on II+, managing CRTC registers and VRAM.
+- **[videx_vterm.h](videx_vterm.h)**: Declares Videx-related variables and functions for initialization, enabling/disabling, and rendering.
