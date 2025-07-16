@@ -53,4 +53,4 @@ flag in `render.h`:
 ```
 // #define RENDER_TEST_PATTERN
 ```
-![Test Pattern](../docs/test_pattern.jpg)
+![Test Pattern](../docs/images/test_pattern.jpg)

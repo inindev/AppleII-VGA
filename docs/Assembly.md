@@ -103,11 +103,11 @@ You can assemble the board using a general assembly guideline of installing the 
 
 If you're surface mounting the Pico then it can be done last.
 
-![Main board image](board_rev_b.jpg)
+![Main board image](images/board_rev_b.jpg)
 
 If you're building a connector board too then just solder it up, ensuring the IDC connector is oriented correctly.
 
-![Connector board image](connector_board.jpg)
+![Connector board image](images/connector_board.jpg)
 
 
 ## Installing the Pico firmware

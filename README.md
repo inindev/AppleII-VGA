@@ -46,7 +46,7 @@ say it should work but there were no code examples.
 ## Project Status
 
 This is currently a DIY project that several folks have built on their own, ranging from
-[hand-wired prototype boards](docs/prototype_card.jpg) to
+[hand-wired prototype boards](docs/images/prototype_card.jpg) to
 [custom](https://user-images.githubusercontent.com/7944844/243266290-d05ce815-0a3d-4464-a4da-49dd44d71e92.jpg)
 [PCBs](https://user-images.githubusercontent.com/94628/253134471-0d5ad359-75ae-400a-acfa-885c80c36e78.jpg)
 and run in their Apple II+'s and IIe's. I consider it to be pretty stable at this point.
@@ -60,22 +60,22 @@ Included in this repo are:
    and [Gerber files](AppleVGA-Connector/outputs/). (You could also build a custom cable instead)
  * The [source code for the Pi Pico microcontroller](pico/)
 
-If you're going to build a card then check the [assembly guide](docs/Assembly.md) and
+If you're going to build a card then check the [assembly guide](docs/images/Assembly.md) and
 [hardware changelog](AppleVGA/CHANGELOG.txt) for important notes.
 
 Many thanks go to the folks in the Discussion area to help push this project forward with bug
 fixes & reports, and design ideas!
 
 **Main board**
-![Main board](docs/board_rev_b.jpg)
+![Main board](docs/images/board_rev_b.jpg)
 
 **Connector board**
 _thanks to @swetland for [this idea](https://github.com/markadev/AppleII-VGA/discussions/15#discussioncomment-6432841)_
 
-![Connector board](docs/connector_board.jpg)
+![Connector board](docs/images/connector_board.jpg)
 
 **In the wild**
-![Live action shot](docs/installed_in_iie.jpg)
+![Live action shot](docs/images/installed_in_iie.jpg)
 
 
 ## Comparisons
@@ -84,19 +84,19 @@ Here are a few comparisons of the VGA card output vs composite video through
 a cheap composite -> HDMI adapter
 
 **Text**
-![Text Mode](docs/composite_vs_vga_text.jpg)
+![Text Mode](docs/images/composite_vs_vga_text.jpg)
 
 **Lores**
-![Lores Mode](docs/composite_vs_vga_lores.jpg)
+![Lores Mode](docs/images/composite_vs_vga_lores.jpg)
 
 **Hires**
-![Hires Mode](docs/composite_vs_vga_hires.jpg)
+![Hires Mode](docs/images/composite_vs_vga_hires.jpg)
 
 **DHires**
-![DHires Mode](docs/composite_vs_vga_dhires.jpg)
+![DHires Mode](docs/images/composite_vs_vga_dhires.jpg)
 
 **80 Columns**
-![80 Columns Mode](docs/composite_vs_vga_80columms.jpg)
+![80 Columns Mode](docs/images/composite_vs_vga_80columms.jpg)
 
 
 ## 80 Column support for the Apple II+
@@ -108,9 +108,9 @@ can still be installed in any slot.
 
 **Apple II+ running 80 Columns Examples**
 
-![AppleII 80 Columms Mode 1](docs/apple2plus_videx_80columns1.jpg)
-![AppleII 80 Columms Mode 2](docs/apple2plus_videx_80columns2.jpg)
-![AppleII 80 Columms Mode 3](docs/apple2plus_videx_80columns3.jpg)
+![AppleII 80 Columms Mode 1](docs/images/apple2plus_videx_80columns1.jpg)
+![AppleII 80 Columms Mode 2](docs/images/apple2plus_videx_80columns2.jpg)
+![AppleII 80 Columms Mode 3](docs/images/apple2plus_videx_80columns3.jpg)
 
 
 ## Future work
