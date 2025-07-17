@@ -1,4 +1,4 @@
-# Apple IIe Expansion Slot Signals
+## Apple II Expansion Slot Signals
 
 | Pin  | Name            | Description                                                                                     | Pico GPIO        |
 |------|-----------------|-------------------------------------------------------------------------------------------------|------------------|
@@ -36,3 +36,35 @@
 - **Power/Ground**: +5V connects to Pico’s VCC (3.3V adjusted via regulator), GND to Pico’s ground. ±12V and -5V are N/A as Pico doesn’t support these voltages.
 - **Slot 7 Signals**: SYNC' (GPIO10) is slot 7-specific, but 3.58M is unmapped.
 - **Transceiver Use**: GPIO0-7 are reused for A0-A7, A8-A15, and D0-D7 via separate 74LVC245 transceivers, with OE controlled by GPIO11 (data), GPIO12 (A0-A7), and GPIO13 (A8-A15).
+
+<br/>
+
+## Apple II Slot
+
+| Left    | Pins      | Right   |
+|---------|-----------|---------|
+| GND     | 26 --- 25 | +5V     |
+| DMA IN  | 27 --- 24 | DMA OUT |
+| INT IN  | 28 --- 23 | INT OUT |
+| NMI'    | 29 --- 22 | DMA'    |
+| IRQ'    | 30 --- 21 | RDY     |
+| RES'    | 31 --- 20 | I/O STROBE' |
+| INH'    | 32 --- 19 | SYNC'   |
+| -12V    | 33 --- 18 | R/W'    |
+| -5V     | 34 --- 17 | A15     |
+| 3.58M   | 35 --- 16 | A14     |
+| 7M      | 36 --- 15 | A13     |
+| Q3      | 37 --- 14 | A12     |
+| φ1      | 38 --- 13 | A11     |
+| μPSYNC  | 39 --- 12 | A10     |
+| φ0      | 40 --- 11 | A9      |
+| DEVSEL' | 41 --- 10 | A8      |
+| D0      | 42 ---  9 | A7      |
+| D1      | 43 ---  8 | A6      |
+| D2      | 44 ---  7 | A5      |
+| D3      | 45 ---  6 | A4      |
+| D4      | 46 ---  5 | A3      |
+| D5      | 47 ---  4 | A2      |
+| D6      | 48 ---  3 | A1      |
+| D7      | 49 ---  2 | A0      |
+| +12V    | 50 ---  1 | I/O SELECT |
